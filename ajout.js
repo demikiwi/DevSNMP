@@ -1,12 +1,25 @@
-//Objet JavaScript
+const fs = require("fs");
+
+//lecture du fichier JSON
+const materiel = require("./materiels");
+
+//Definiton nouveau materiel
 let materiel = {
-    "ip": "",
-    "actif": "",
-    "description": "",
-    "info": ""
+    "ip": "test",
+    "actif": "test",
+    "description": "test",
+    "info": "test"
   };
 
-//Conversion en chaine JSON
-let json = JSON.stringify(materiel);
+//ajout du materiel dans l'objet materiels
+materiels.push(materiel);
 
-//JSON.parse fait l'inverse
+//ecriture dans le fichier JSON
+fs.writeFile("materiels.JSON", JSON.stringify(materiels),err => {
+
+  //check des erreurs
+  if (err) throw err;
+
+  //succès
+  console.log("Ecriture terminée");
+})
