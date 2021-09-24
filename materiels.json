@@ -1,3 +1,5 @@
-[
-{"ip":"127.0.0.1","actif":"1","description":"test local host","info":"flux interface réseau"}
-]
+{"device":[
+    {"ip":"127.0.0.1","actif":"1","description":"test local host","info":"flux interface réseau"},
+    {"ip":"192.168.0.1","actif":"1","description":"Gateway","info":"porte de sortie"}
+    ]
+}
