@@ -2,7 +2,7 @@ const http =  require('http')
 const express = require('express')
 const app = express()
 const port = 8080
-json = require('./BDD.json');
+json = require('./materiels.json');
 
 app.get('/', (req,res) => {
     res.send('Bienvenue - Sauzer / Constandi')
