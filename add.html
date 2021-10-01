@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Socket.IO chat</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>Super-superviseur by Antoine & Nicolas</h1>
+    </div>
+    <div>
+        <a href="/list_device" class=button>liste des devices</a>
+    </div>
+    
+    <div class="form-style-2">
+        <div class="form-style-2-heading">Edition du device</div>
+        <form action="" method="post">
+            <label for="field1"><span>adresse IP <span class="required">*</span></span>
+                <input type="text" class="input-field" name="field1" value="" />
+        
+            </label>
+            <label for="field4"><span>Etat</span>
+                <select name="field4" class="select-field">
+                    <option value="1">actif</option>
+                    <option value="0">inactif</option>
+                </select>
+            </label>
+            <label for="field2"><span>Description <span class="required">*</span></span>
+                <input type="text" class="input-field" name="field2" value="" />
+            </label>
+        <label for="field5"><span>Information <span class="required">*</span></span><textarea name="field5" class="textarea-field"></textarea></label>
+        
+        <label><span> </span><input type="submit" value="Submit" /></label>
+        </form>
+    </div>
+  </body>
+</html>
