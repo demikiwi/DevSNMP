@@ -1,10 +1,83 @@
-const json = require('./materiels.json')
+var materiels = require('./materiels.json')
 
-for (var i=0; i<json.length; i++) {
-  if (json[i].Id == 3) {
-    json[i].Username = "choubi";
-    break;
+function editIP(leUuid, data){
+  console.log("appel de la fonction verifAdd")
+  for (var i=0; i<fic.materiels.length; i++) {
+    console.log(i)
+    if (materiels.device[i].uuid == leUuid) {
+      materiels.device[i].ip = data;
+      break;
+    }
   }
+
+  fs.writeFile('materiels.JSON', JSON.stringify(materiels),err => {
+
+    //check des erreurs
+    if (err) throw err;
+    //succès
+    console.log("Ecriture terminée");
+  })
+
 }
 
-alert("New Username: " + json[2].Username);
+function editActif(leUuid, data){
+  console.log("appel de la fonction verifAdd")
+  for (var i=0; i<materiels.device.length; i++) {
+    console.log(i)
+    if (materiels.device[i].uuid == leUuid) {
+      materiels.device[i].actif = data;
+      break;
+    }
+  }
+
+  fs.writeFile('materiels.JSON', JSON.stringify(materiels),err => {
+
+    //check des erreurs
+    if (err) throw err;
+    //succès
+    console.log("Ecriture terminée");
+  })
+
+}
+
+function editDescription(leUuid, data){
+  console.log("appel de la fonction verifAdd")
+  for (var i=0; i<materiels.device.length; i++) {
+    console.log(i)
+    if (materiels.device[i].uuid == leUuid) {
+      materiels.device[i].description = data;
+      break;
+    }
+  }
+
+  fs.writeFile('materiels.JSON', JSON.stringify(materiels),err => {
+
+    //check des erreurs
+    if (err) throw err;
+    //succès
+    console.log("Ecriture terminée");
+  })
+
+}
+
+function editInfo(leUuid, data){
+  console.log("appel de la fonction verifAdd")
+  for (var i=0; i<materiels.device.length; i++) {
+    console.log(i)
+    if (materiels.device[i].uuid == leUuid) {
+      materiels.device[i].info = data;
+      break;
+    }
+  }
+
+  fs.writeFile('materiels.JSON', JSON.stringify(materiels),err => {
+
+    //check des erreurs
+    if (err) throw err;
+    //succès
+    console.log("Ecriture terminée");
+  })
+
+}
+
+//console.log(json)
