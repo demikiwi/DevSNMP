@@ -9,7 +9,7 @@ app.get('/', (req,res) => {
   })
   
 app.get('/list_device',(req,res) => {
-  header='<div><h1>Super-superviseur by Antoine & Nicolas</h1></div><div><a href="/add_device" class=button>add device</a></div>'
+  header='<head><title>Socket.IO chat</title><style>body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }</style></head><div><h1>Super-superviseur by Antoine & Nicolas</h1></div><div><a href="/add_device" class=button>add device</a></div>'
   let template = {'<>':'ul','html':[
     {'<>':'div','obj':function(){return(this.device)},'html':[
         {'<>':'span class="ip" style="width:100px;"','text':'${ip} '},
