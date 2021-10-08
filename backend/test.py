@@ -1,10 +1,16 @@
 from pysnmp.hlapi import *
+import json
+
+fileObject = open("materiels.json", "r")
+jsonContent = fileObject.read()
+obj_python = json.loads(jsonContent)
+
 
 iterator = getCmd(SnmpEngine(),
                   CommunityData('public'),
                   UdpTransportTarget(('glmsfr.ddns.net', 22558)),
                   ContextData(),
-                  ObjectType(ObjectIdentity('1.3.6.1.2.1.2.2.1.16.10')))
+                  ObjectType(ObjectIdentity(obj_python['OID'])))
 
 errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
 
