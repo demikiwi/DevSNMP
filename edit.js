@@ -10,7 +10,7 @@ function editIP(leUuid, data){
     }
   }
 
-  fs.writeFile('materiels.JSON', JSON.stringify(materiels),err => {
+  fs.writeFile('materiels.JSON', JSON.stringify(materiels,null,2),err => {
 
     //check des erreurs
     if (err) throw err;
@@ -79,5 +79,3 @@ function editInfo(leUuid, data){
   })
 
 }
-
-//console.log(json)

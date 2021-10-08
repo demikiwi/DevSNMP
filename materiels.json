@@ -1,1 +1,39 @@
-{"device":[{"ip":"127.0.0.1","actif":"1","description":"test local host","info":"flux interface réseau","uuid":"00006ec3-263d-4169-97b5-7f15c2393156"},{"ip":"192.168.0.1","actif":"1","description":"Gateway","info":"porte de sortie","uuid":"00006ec3-263d-4169-97b5-7f15c2393156"},{"ip":"test","actif":"test","description":"test","info":"test","uuid":"3a146ec3-263d-4169-97b5-7f15c2393156"},{"ip":"test1","actif":"test1","description":"test1","info":"test1","uuid":"12fd9f3d-1cc3-4324-aeaf-7fe2543bf0d1"}]}
+{
+  "device": [
+    {
+      "ip": "127.0.0.1",
+      "actif": "1",
+      "description": "test local host",
+      "info": "flux interface réseau",
+      "uuid": "00006ec3-263d-4169-97b5-7f15c2393156"
+    },
+    {
+      "ip": "192.168.0.1",
+      "actif": "1",
+      "description": "Gateway",
+      "info": "porte de sortie",
+      "uuid": "00006ec3-263d-4169-97b5-7f15c2393156"
+    },
+    {
+      "ip": "test",
+      "actif": "test",
+      "description": "test",
+      "info": "test",
+      "uuid": "3a146ec3-263d-4169-97b5-7f15c2393156"
+    },
+    {
+      "ip": "test1",
+      "actif": "test1",
+      "description": "test1",
+      "info": "test1",
+      "uuid": "12fd9f3d-1cc3-4324-aeaf-7fe2543bf0d1"
+    },
+    {
+      "ip": "test1",
+      "actif": "test1",
+      "description": "test1",
+      "OID": "test1",
+      "uuid": "4209d879-2e85-490a-a6d7-b1942ae3b00c"
+    }
+  ]
+}

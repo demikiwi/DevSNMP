@@ -26,7 +26,7 @@ let materiel = {
     "ip": "test1",
     "actif": "test1",
     "description": "test1",
-    "info": "test1",
+    "OID": "test1",
     "uuid": uuid
   };
 
@@ -36,7 +36,7 @@ console.log(JSON.stringify(materiel))
 
 console.log(materiels)
 //ecriture dans le fichier JSON
-fs.writeFile('materiels.JSON', JSON.stringify(materiels),err => {
+fs.writeFile('materiels.JSON', JSON.stringify(materiels,null,2),err => {
 
   //check des erreurs
   if (err) throw err;
