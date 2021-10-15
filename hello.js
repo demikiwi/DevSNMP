@@ -40,6 +40,10 @@ app.get('/add_device', (req, res) => {
   res.sendFile(__dirname + '/add.html');
 });
 
+/*
+######################################
+Fonction placé dans la variable script
+######################################
 function getValue(uuiddata){
   var x = document.getElementById(uuiddata);
   var ipFromData = x.querySelector(".ip")
@@ -54,6 +58,7 @@ function getValue(uuiddata){
   }
   console.log(data)
 }
+*/
   
 app.listen(port,() => {
   console.log("Server up and running")
