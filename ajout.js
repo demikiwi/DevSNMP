@@ -23,9 +23,9 @@ uuid = generateUUID()
 
 module.exports = {
 
-  fonctionDajout: function (){
+  fonctionDajout: function (IP, Etat, Description, Communaute, Oids, Port){
     uuid = generateUUID()
-    
+
     console.log("coucou")
   }
 }
