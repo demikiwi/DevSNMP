@@ -4,12 +4,12 @@
       "ip": "127.0.0.1",
       "actif": "1",
       "description": "test local host",
-      "OID":[
-          {
-              "1":"jesuisloid1",
-              "2":"jesuisloid2",
-              "3":"jesuisloid3"
-          }
+      "OID": [
+        {
+          "1": "jesuisloid1",
+          "2": "jesuisloid2",
+          "3": "jesuisloid3"
+        }
       ],
       "port": "161",
       "uuid": "00006ec3-263d-4169-97b5-7f15c2393156"
@@ -18,13 +18,13 @@
       "ip": "192.168.0.1",
       "actif": "1",
       "description": "Gateway",
-      "OID":[
+      "OID": [
         {
-            "1":"jesuisloid1",
-            "2":"jesuisloid2",
-            "3":"jesuisloid3"
+          "1": "jesuisloid1",
+          "2": "jesuisloid2",
+          "3": "jesuisloid3"
         }
-    ],
+      ],
       "port": "161",
       "uuid": "00006ec3-263d-4169-97b5-7f15c2393156"
     },
@@ -32,13 +32,13 @@
       "ip": "test",
       "actif": "test",
       "description": "test",
-      "OID":[
+      "OID": [
         {
-            "1":"jesuisloid1",
-            "2":"jesuisloid2",
-            "3":"jesuisloid3"
+          "1": "jesuisloid1",
+          "2": "jesuisloid2",
+          "3": "jesuisloid3"
         }
-    ],
+      ],
       "port": "161",
       "uuid": "3a146ec3-263d-4169-97b5-7f15c2393156"
     },
@@ -46,13 +46,13 @@
       "ip": "test1",
       "actif": "test1",
       "description": "test1",
-      "OID":[
+      "OID": [
         {
-            "1":"jesuisloid1",
-            "2":"jesuisloid2",
-            "3":"jesuisloid3"
+          "1": "jesuisloid1",
+          "2": "jesuisloid2",
+          "3": "jesuisloid3"
         }
-    ],
+      ],
       "port": "161",
       "uuid": "12fd9f3d-1cc3-4324-aeaf-7fe2543bf0d1"
     },
@@ -60,15 +60,36 @@
       "ip": "test1",
       "actif": "test1",
       "description": "test1",
-      "OID":[
+      "OID": [
         {
-            "1":"jesuisloid1",
-            "2":"jesuisloid2",
-            "3":"jesuisloid3"
+          "1": "jesuisloid1",
+          "2": "jesuisloid2",
+          "3": "jesuisloid3"
         }
-    ],
+      ],
       "port": "161",
       "uuid": "4209d879-2e85-490a-a6d7-b1942ae3b00c"
+    },
+    {
+      "ip": "test1",
+      "actif": "test1",
+      "description": "test1",
+      "OID": "test1",
+      "uuid": "84107be4-9bcb-4f4c-9435-23ed16f1e55a"
+    },
+    {
+      "ip": "test1",
+      "actif": "test1",
+      "description": "test1",
+      "OID": "test1",
+      "uuid": "83c7ff6e-8b45-435e-8eb5-8981c1edcbc9"
+    },
+    {
+      "ip": "test1",
+      "actif": "test1",
+      "description": "test1",
+      "OID": "test1",
+      "uuid": "4752a0d0-97c2-4ec0-b4a1-cf7a574f37a0"
     }
   ]
 }

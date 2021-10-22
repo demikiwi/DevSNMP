@@ -3,6 +3,8 @@ const app = express()
 const port = 8081
 const json = require('./materiels.json')
 const json2html = require('node-json2html')
+var bodyParser = require('body-parser')
+const add = require('./ajout')
 
 app.get('/', (req,res) => {
     res.send('Bienvenue - Sauzer / Constandi')
@@ -33,6 +35,10 @@ var script = '<script>function getValue(uuiddata)\n{\nvar x = document.getElemen
 app.get('/edit_device', (req, res) => {
   console.log("le bouton edit device a été cliqué")
   res.sendFile(__dirname + '/edit.html');
+});
+
+app.post('/ajout', function (req, res, next) {
+  add.fonctionDajout()
 });
 
 app.get('/add_device', (req, res) => {

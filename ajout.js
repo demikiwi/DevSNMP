@@ -21,6 +21,15 @@ function generateUUID() { // Public Domain/MIT
 
 uuid = generateUUID()
 
+module.exports = {
+
+  fonctionDajout: function (){
+    uuid = generateUUID()
+    
+    console.log("coucou")
+  }
+}
+
 //Definiton nouveau materiel
 let materiel = {
     "ip": "test1",
