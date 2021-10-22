@@ -5,12 +5,12 @@
       "actif": "1",
       "description": "test local host",
       "communaute": "public",
-      "oids":[
-          {
-              "1":"jesuisloid1",
-              "2":"jesuisloid2",
-              "3":"jesuisloid3"
-          }
+      "oids": [
+        {
+          "1": "jesuisloid1",
+          "2": "jesuisloid2",
+          "3": "jesuisloid3"
+        }
       ],
       "port": "161",
       "uuid": "00006ec3-263d-4169-97b5-7f15c2393156"
@@ -20,7 +20,7 @@
       "actif": "1",
       "description": "Gateway",
       "communaute": "public",
-      "oids":[
+      "oids": [
         {
           "1": "jesuisloid1",
           "2": "jesuisloid2",
@@ -35,7 +35,7 @@
       "actif": "test",
       "description": "test",
       "communaute": "public",
-      "oids":[
+      "oids": [
         {
           "1": "jesuisloid1",
           "2": "jesuisloid2",
@@ -50,7 +50,7 @@
       "actif": "test1",
       "description": "test1",
       "communaute": "public",
-      "oids":[
+      "oids": [
         {
           "1": "jesuisloid1",
           "2": "jesuisloid2",
@@ -65,7 +65,7 @@
       "actif": "test1",
       "description": "test1",
       "communaute": "public",
-      "oids":[
+      "oids": [
         {
           "1": "jesuisloid1",
           "2": "jesuisloid2",
@@ -74,6 +74,24 @@
       ],
       "port": "161",
       "uuid": "4209d879-2e85-490a-a6d7-b1942ae3b00c"
+    },
+    {
+      "ip": "10.0.0.2",
+      "actif": "1",
+      "description": "toto",
+      "communaute": "public",
+      "oids": "1.6.3.21.1.1",
+      "port": "161",
+      "uuid": "ff03f577-24fe-4025-b31b-4c59ff2d3c89"
+    },
+    {
+      "ip": "10.0.0.3",
+      "actif": "1",
+      "description": "toata",
+      "communaute": "public",
+      "oids": "1.6.3.21.1.1",
+      "port": "161",
+      "uuid": "38723f21-e3ab-49fe-afa2-936c1e2df9ff"
     }
   ]
 }

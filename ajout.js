@@ -22,34 +22,33 @@ function generateUUID() { // Public Domain/MIT
 uuid = generateUUID()
 
 module.exports = {
-
   fonctionDajout: function (IP, Etat, Description, Communaute, Oids, Port){
     uuid = generateUUID()
 
-    console.log("coucou")
+    //Definiton nouveau materiel
+    let materiel = {
+      "ip": IP,
+      "actif": Etat,
+      "description": Description,
+      "communaute": Communaute,
+      "oids" : Oids,
+      "port" : Port,
+      "uuid": uuid
+    };
+
+    materiels.device.push(materiel)
+    // //ajout du materiel dans l'objet materiels
+    // //console.log(JSON.stringify(materiel))
+
+    console.log(materiels)
+    // //ecriture dans le fichier JSON
+    fs.writeFile('materiels.JSON', JSON.stringify(materiels,null,2),err => {
+
+    //   //check des erreurs
+    if (err) throw err;
+
+    //succès
+    console.log("Ecriture terminée");
+   })
   }
 }
-
-//Definiton nouveau materiel
-let materiel = {
-    "ip": "test1",
-    "actif": "test1",
-    "description": "test1",
-    "OID": "test1",
-    "uuid": uuid
-  };
-
-materiels.device.push(materiel)
-//ajout du materiel dans l'objet materiels
-console.log(JSON.stringify(materiel))
-
-console.log(materiels)
-//ecriture dans le fichier JSON
-fs.writeFile('materiels.JSON', JSON.stringify(materiels,null,2),err => {
-
-  //check des erreurs
-  if (err) throw err;
-
-  //succès
-  console.log("Ecriture terminée");
-})

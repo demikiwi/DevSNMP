@@ -6,6 +6,9 @@ const json2html = require('node-json2html')
 var bodyParser = require('body-parser')
 const add = require('./ajout')
 
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
+
 app.get('/', (req,res) => {
     res.send('Bienvenue - Sauzer / Constandi')
   })
@@ -38,7 +41,8 @@ app.get('/edit_device', (req, res) => {
 });
 
 app.post('/ajout', function (req, res, next) {
-  add.fonctionDajout()
+  form_data = req.body
+  add.fonctionDajout(form_data.ip, form_data.etat, form_data.description, form_data.communaute, form_data.oids, form_data.port)
 });
 
 app.get('/add_device', (req, res) => {
