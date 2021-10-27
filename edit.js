@@ -98,8 +98,10 @@ module.exports = {
         oid2 = materiels.device[i].oids[1].oid
         oid3 = materiels.device[i].oids[2].oid
 
-        console.log("ip = " + ip +", actif = " + actif +", description =" + description + ", communaute = " + communaute + ", OIDS = " +oid1+"\n"+oid2+"\n"+oid3)
-        }
+        //concatenation dans un JSON des variables du device
+        result = '{"ip":"'+ip+'","actif":"'+actif+'","description":"'+description+'","communaute":"'+communaute+'","oid1":"'+oid1+'","oid2":"'+oid2+'","oid3":"'+oid3+'","port":"'+port+'","uuid":"'+uuid+'"}';
+        return JSON.parse(result)
+      }
 
       }
     }

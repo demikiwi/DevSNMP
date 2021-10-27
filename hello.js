@@ -1,4 +1,5 @@
 const express = require('express')
+const exphbs = require('express-handlebars');
 const app = express()
 const port = 8081
 const json2html = require('node-json2html')
@@ -26,7 +27,7 @@ var script = '<script>function senduuid(uuiddata)\n{\n\n}</script>'
         {'<>':'span class="actif"','text':'${actif} '},
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
-        {'<>':'a href="/edit_device" onclick="senduuid()"','text':'edit device'}
+        {'<>':'a href="/edit_device/'+uuid+'" onclick="senduuid()"','text':'edit device'}
     ]}  
 ]};
   console.log("appel de la page device_list")
@@ -37,15 +38,24 @@ var script = '<script>function senduuid(uuiddata)\n{\n\n}</script>'
 
 })
 
+app.engine('hbs', exphbs({
+  defaultLayout: 'edit',
+  extname: '.hbs'
+}));
+
+app.set('view engine', 'hbs');
+
 app.get('/edit_device/:uuid', (req, res) => {
-  edit.PrefillPourEdit(req.params.uuid)
+  //récupération des données d'un device en fonction de son
+  prefil = edit.PrefillPourEdit(req.params.uuid)
+  console.log(prefil.oid1)
   console.log("le bouton edit device a été cliqué")
-  res.sendFile(__dirname + '/edit.html', );
+  res.sendFile(__dirname + '/edit.hbs', );
 });
 
 app.post('/edit', function (req, res, next) {
   form_data = req.body
-  add.fonctionEdit(form_data.ip, form_data.etat, form_data.description, form_data.communaute, form_data.oid1, form_data.oid2, form_data.oid3, form_data.port)
+  add.fonctionDajout(form_data.ip, form_data.etat, form_data.description, form_data.communaute, form_data.oid1, form_data.oid2, form_data.oid3, form_data.port)
   res.writeHead(301,{Location: '/list_device'});
   res.end();
 });
