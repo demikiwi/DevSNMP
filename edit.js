@@ -87,7 +87,7 @@ module.exports = {
     for (var i=0; i<materiels.device.length; i++){
       //Si l'UUID récupéré existe bien alors on récupère toute les données de l'objet qui possède cet UUID.
       if (materiels.device[i].uuid == uuid) {
-
+        console.log("l'UUID a bien été trouvé")
         ip = materiels.device[i].ip
         actif = materiels.device[i].actif
         description = materiels.device[i].description

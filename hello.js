@@ -27,7 +27,7 @@ var script = '<script>function senduuid(uuiddata)\n{\n\n}</script>'
         {'<>':'span class="actif"','text':'${actif} '},
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
-        {'<>':'a href="/edit_device/'+uuid+'" onclick="senduuid()"','text':'edit device'}
+        {'<>':'a href="/edit_device/${uuid}"','text':'edit device'}
     ]}  
 ]};
   console.log("appel de la page device_list")
@@ -46,9 +46,8 @@ app.engine('hbs', exphbs({
 app.set('view engine', 'hbs');
 
 app.get('/edit_device/:uuid', (req, res) => {
-  //récupération des données d'un device en fonction de son
   prefil = edit.PrefillPourEdit(req.params.uuid)
-  console.log(prefil.oid1)
+  // console.log("prefil = "+ prefil.ip)
   console.log("le bouton edit device a été cliqué")
   res.sendFile(__dirname + '/edit.hbs', );
 });
