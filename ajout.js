@@ -22,7 +22,7 @@ function generateUUID() { // Public Domain/MIT
 uuid = generateUUID()
 
 module.exports = {
-  fonctionDajout: function (IP, Etat, Description, Communaute, Oids, Port){
+  fonctionDajout: function (IP, Etat, Description, Communaute, Oid1, Oid2, Oid3, Port){
     uuid = generateUUID()
 
     //Definiton nouveau materiel
@@ -31,7 +31,17 @@ module.exports = {
       "actif": Etat,
       "description": Description,
       "communaute": Communaute,
-      "oids" : Oids,
+      "oids" : [
+        {
+          "oid" : Oid1,
+        },
+        {
+          "oid" : Oid2,
+        },
+        {
+          "oid" : Oid3,
+        }
+      ],
       "port" : Port,
       "uuid": uuid
     };

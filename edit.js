@@ -79,3 +79,28 @@ function editInfo(leUuid, data){
   })
 
 }
+
+module.exports = {
+  PrefillPourEdit: function (uuid){
+    console.log(uuid)
+    //Onboucle sur tout les objets "device" présent dans la variable materiels définie en début du script.
+    for (var i=0; i<materiels.device.length; i++){
+      //Si l'UUID récupéré existe bien alors on récupère toute les données de l'objet qui possède cet UUID.
+      if (materiels.device[i].uuid == uuid) {
+
+        ip = materiels.device[i].ip
+        actif = materiels.device[i].actif
+        description = materiels.device[i].description
+        communaute = materiels.device[i].communaute
+        port = materiels.device[i].port
+        //Récupération des OIDs, le premier OID a l'index 0 de l'objet.
+        oid1 = materiels.device[i].oids[0].oid
+        oid2 = materiels.device[i].oids[1].oid
+        oid3 = materiels.device[i].oids[2].oid
+
+        console.log("ip = " + ip +", actif = " + actif +", description =" + description + ", communaute = " + communaute + ", OIDS = " +oid1+"\n"+oid2+"\n"+oid3)
+        }
+
+      }
+    }
+  }
