@@ -47,14 +47,24 @@ app.set('view engine', 'hbs');
 
 app.get('/edit_device/:uuid', (req, res) => {
   prefil = edit.PrefillPourEdit(req.params.uuid)
-  // console.log("prefil = "+ prefil.ip)
+
   console.log("le bouton edit device a été cliqué")
-  res.sendFile(__dirname + '/edit.hbs', );
+
+  res.render('edit', { 
+    ip_pre: prefil.ip,
+    description_pre: prefil.description,
+    communaute_pre: prefil.communaute,
+    oid1_pre: prefil.oid1,
+    oid2_pre: prefil.oid2,
+    oid3_pre: prefil.oid3,
+    port_pre: prefil.port,
+    uuid_pre: prefil.uuid
+    })
 });
 
 app.post('/edit', function (req, res, next) {
   form_data = req.body
-  add.fonctionDajout(form_data.ip, form_data.etat, form_data.description, form_data.communaute, form_data.oid1, form_data.oid2, form_data.oid3, form_data.port)
+  edit.editDevice(form_data.ip, form_data.etat, form_data.description, form_data.communaute, form_data.oid1, form_data.oid2, form_data.oid3, form_data.port, form_data.uuid)
   res.writeHead(301,{Location: '/list_device'});
   res.end();
 });

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit device</title>
+    <style>
+      body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+
+      #form { background: rgba(0, 0, 0, 0.15); padding: 0.25rem; position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 3rem; box-sizing: border-box; backdrop-filter: blur(10px); }
+      #input { border: none; padding: 0 1rem; flex-grow: 1; border-radius: 2rem; margin: 0.25rem; }
+      #input:focus { outline: none; }
+      #form > button { background: #333; border: none; padding: 0 1rem; margin: 0.25rem; border-radius: 3px; outline: none; color: #fff; }
+
+      #messages { list-style-type: none; margin: 0; padding: 0; }
+      #messages > li { padding: 0.5rem 1rem; }
+      #messages > li:nth-child(odd) { background: #efefef; }
+    </style>
+  </head>
+  <body>
+    <div>
+        <h1>Super-superviseur by Antoine & Nicolas</h1>
+    </div>
+    <div>
+        <a href="/list_device" class=button>liste des devices</a>
+    </div>
+
+    <div class="form-style-2">
+        <div class="form-style-2-heading">Edition du device</div>
+        <form action="/edit" method="post">
+            <label for="ip"><span>adresse IP <span class="required">*</span></span>
+                <input type="text" class="input-field" name="ip" value="{{ip_pre}}" />
+            </label>
+          </br>
+            <label for="etat"><span>Etat</span>
+                <select name="etat" class="select-field">
+                    <option value="1">actif</option>
+                    <option value="0">inactif</option>
+                </select>
+            </label>
+          </br>
+          <label for="description"><span>Description <span class="required">*</span></span>
+                <input type="text" class="input-field" name="description" value="{{description_pre}}" />
+          </label>
+          </br>
+            <label for="communaute"><span>Communaute <span class="required">*</span></span>
+              <input type="text" class="input-field" name="communaute" value="{{communaute_pre}}" />
+          </label>
+          </br>
+          <label for="oid1"><span>Oid 1 <span class="required">*</span></span>
+            <input type="text" class="input-field" name="oid1" value="{{oid1_pre}}" />
+          </label>
+          </br>
+          <label for="oid2"><span>Oid 2 <span class="required">*</span></span>
+            <input type="text" class="input-feld" name="oid2" value="{{oid2_pre}}" />
+          </label>
+          </br>
+          <label for="oid3"><span>Oid 3 <span class="required">*</span></span>
+            <input type="text" class="input-field" name="oid3" value="{{oid3_pre}}" />
+          </label>
+          </br>
+          <label for="port"><span>Port <span class="required">*</span></span>
+            <input type="text" class="input-field" name="port" value="{{port_pre}}" />
+          </label>
+          <label for="uuid"><span>UUID <span class="required">*</span></span>
+            <input type="text" class="input-field" name="uuid" value="{{uuid_pre}}" readonly="readonly" />
+          </label>
+        <label><span> </span><input type="submit" value="Submit" /></label>
+        </form>
+    </div>
+  </body>
+</html>
