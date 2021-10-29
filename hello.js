@@ -27,7 +27,8 @@ var script = '<script>function senduuid(uuiddata)\n{\n\n}</script>'
         {'<>':'span class="actif"','text':'${actif} '},
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
-        {'<>':'a href="/edit_device/${uuid}"','text':'edit device'}
+        {'<>':'a href="/edit_device/${uuid}"','text':'edit device'},
+        {'<>':'a href="/remove_device/${uuid}"','text':'remove device'}
     ]}  
 ]};
   console.log("appel de la page device_list")
@@ -81,25 +82,11 @@ app.get('/add_device', (req, res) => {
   res.sendFile(__dirname + '/add.html');
 });
 
-/*
-######################################
-Fonction placé dans la variable script
-######################################
-function getValue(uuiddata){
-  var x = document.getElementById(uuiddata);
-  var ipFromData = x.querySelector(".ip")
-  var actifFromData = x.querySelector(".actif")
-  var descriptionFromData = x.querySelector(".description")
-  var infoFromData = x.querySelector(".info")
-  var data = {
-    ip: ipFromData,
-    actif: actifFromData,
-    description: descriptionFromData,
-    info: infoFromData
-  }
-  console.log(data)
-}
-*/
+app.get('/remove_device/:uuid', (req, res) => {
+  edit.removeDevice(req.params.uuid)
+  res.writeHead(301,{Location: '/list_device'});
+  res.end();
+});
   
 app.listen(port,() => {
   console.log("Server up and running")

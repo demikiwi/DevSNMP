@@ -47,5 +47,20 @@ module.exports = {
         //succès
         console.log("Ecriture terminée du device" + Uuid);
       })
+    },
+    removeDevice: function (Uuid){
+      for (var i=0; i<materiels.device.length; i++) {
+        if (materiels.device[i].uuid == Uuid) {
+          materiels = delete materiels.device[i]
+          break;
+        }
+      }
+      fs.writeFile('materiels.JSON', JSON.stringify(materiels,null,2),err => {
+
+        //check des erreurs
+        if (err) throw err;
+        //succès
+        console.log("Supression terminée du device" + Uuid);
+      })
     }
   }
