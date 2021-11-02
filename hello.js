@@ -18,26 +18,24 @@ app.get('/list_device',(req,res) => {
 
 const json = require('./materiels.json')
 
-var script = '<script>function senduuid(uuiddata)\n{\n\n}</script>'
-
-  header='<head><title>Socket.IO chat</title><style>body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }</style></head><div><h1>Super-superviseur by Antoine & Nicolas</h1></div><div><a href="/add_device" class=button>add device</a></div>'
+  header='<head><title>Superviseur</title><style>body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }</style></head><div><h1>Super-superviseur by Antoine & Nicolas</h1></div><div><a href="/add_device" class=button>add device</a></div>'
   let template = {'<>':'ul','html':[
     {'<>':'div id="'+uuid+'"','obj':function(){return(this.device)},'html':[
         {'<>':'span class="ip"','text':'${ip} '},
         {'<>':'span class="actif"','text':'${actif} '},
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
-        {'<>':'a href="/edit_device/${uuid}"','text':'edit device'},
-        {'<>':'a href="/remove_device/${uuid}"','text':'remove device'}
+        {'<>':'a href="/edit_device/${uuid}"','text':'edit device  '}
+        //{'<>':'a href="/remove_device/${uuid}"','text':'remove device'}
     ]}  
 ]};
   console.log("appel de la page device_list")
 
   tab=json2html.render(json,template)
-  result = header + script + tab
+  result = header + tab
   return res.send(result)
 
-})
+});
 
 app.engine('hbs', exphbs({
   defaultLayout: 'edit',
@@ -87,7 +85,7 @@ app.get('/remove_device/:uuid', (req, res) => {
   res.writeHead(301,{Location: '/list_device'});
   res.end();
 });
-  
+
 app.listen(port,() => {
   console.log("Server up and running")
-  })
+  });

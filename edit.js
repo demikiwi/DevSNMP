@@ -51,7 +51,7 @@ module.exports = {
     removeDevice: function (Uuid){
       for (var i=0; i<materiels.device.length; i++) {
         if (materiels.device[i].uuid == Uuid) {
-          materiels = delete materiels.device[i]
+          delete materiels.device[i]
           break;
         }
       }
