@@ -20,13 +20,13 @@ const json = require('./materiels.json')
 
   header='<head><title>Superviseur</title><style>body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }</style></head><div><h1>Super-superviseur by Antoine & Nicolas</h1></div><div><a href="/add_device" class=button>add device</a></div>'
   let template = {'<>':'ul','html':[
-    {'<>':'div id="'+uuid+'"','obj':function(){return(this.device)},'html':[
+    {'<>':'div','obj':function(){return(this.device)},'html':[
         {'<>':'span class="ip"','text':'${ip} '},
         {'<>':'span class="actif"','text':'${actif} '},
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
-        {'<>':'a href="/edit_device/${uuid}"','text':'edit device  '}
-        //{'<>':'a href="/remove_device/${uuid}"','text':'remove device'}
+        {'<>':'a href="/edit_device/${uuid}"','text':'edit device  '},
+        {'<>':'a href="/remove_device/${uuid}"','text':'remove device'}
     ]}  
 ]};
   console.log("appel de la page device_list")
@@ -84,6 +84,12 @@ app.get('/remove_device/:uuid', (req, res) => {
   edit.removeDevice(req.params.uuid)
   res.writeHead(301,{Location: '/list_device'});
   res.end();
+});
+
+app.get('/monitor/:uuid', (req, res) => {
+  res.render('mon_choix_oid', { 
+    uuid_pre: req.params.uuid
+    })
 });
 
 app.listen(port,() => {

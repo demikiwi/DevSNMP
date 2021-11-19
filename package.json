@@ -5,6 +5,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-validator": "^6.12.2",
+    "fast-csv": "^4.3.6",
     "node-json2html": "^2.1.0"
   }
 }

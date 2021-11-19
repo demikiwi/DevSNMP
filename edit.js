@@ -1,5 +1,5 @@
-var materiels = require('./materiels.json')
 const fs = require('fs')
+const materiels = require('./materiels.json')
 
 module.exports = {
   PrefillPourEdit: function (uuid){
@@ -51,7 +51,9 @@ module.exports = {
     removeDevice: function (Uuid){
       for (var i=0; i<materiels.device.length; i++) {
         if (materiels.device[i].uuid == Uuid) {
-          delete materiels.device[i]
+          // result = materiels.device.splice(i,1)
+          // console.log(result)
+          materiels.device.splice(i,1)
           break;
         }
       }
