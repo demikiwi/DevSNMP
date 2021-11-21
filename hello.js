@@ -25,8 +25,11 @@ const json = require('./materiels.json')
         {'<>':'span class="actif"','text':'${actif} '},
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
-        {'<>':'a href="/edit_device/${uuid}"','text':'edit device  '},
-        {'<>':'a href="/remove_device/${uuid}"','text':'remove device'}
+        {'<>':'a href="/edit_device/${uuid}"','text':'edit device'},
+        {'<>':'span class="separateur"','text':''},
+        {'<>':'a href="/remove_device/${uuid}"','text':'remove device'},
+        {'<>':'span class="separateur"','text':' '},
+        {'<>':'a href="/monitor/${uuid}"','text':'monitor device'}
     ]}  
 ]};
   console.log("appel de la page device_list")
@@ -87,7 +90,8 @@ app.get('/remove_device/:uuid', (req, res) => {
 });
 
 app.get('/monitor/:uuid', (req, res) => {
-  res.render('mon_choix_oid', { 
+  res.render('oid', { 
+    layout: false,
     uuid_pre: req.params.uuid
     })
 });
