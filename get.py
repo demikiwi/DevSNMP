@@ -2,6 +2,7 @@ import json
 from pysnmp.hlapi import *
 from json import *
 from datetime import datetime
+import re
 
 
 def snmp():
@@ -26,6 +27,7 @@ def snmp():
                 else:
                     for varBind in varBinds:  # SNMP response contents
                         result = (' = '.join([x.prettyPrint() for x in varBind]))
+                        result = re.sub('.*= ', '', result)
 
             snmpresult = str(datetime.now())+';'+device['ip']+';'+device['uuid']+';'+oids['oid']+';'
 
