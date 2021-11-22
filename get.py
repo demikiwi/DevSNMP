@@ -6,7 +6,7 @@ from datetime import datetime
 
 def snmp():
 
-    with open("../materiels.json") as json_data:
+    with open("/home/antoine/Documents/Cours/gitsnmp/DevSNMP/materiels.json") as json_data:
         equipement = json.load(json_data)
 
     for device in equipement['device']:
@@ -29,7 +29,7 @@ def snmp():
 
             snmpresult = str(datetime.now())+';'+device['ip']+';'+device['uuid']+';'+oids['oid']+';'+result
 
-            fichier = open("../logs.txt", "a")
+            fichier = open("/home/antoine/Documents/Cours/gitsnmp/DevSNMP/logs.txt", "a")
             fichier.write("\n"+snmpresult)
             fichier.close()
 
