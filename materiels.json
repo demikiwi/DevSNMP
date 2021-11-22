@@ -1,6 +1,25 @@
 {
   "device": [
     {
+      "ip": "glmsfr.ddns.net",
+      "actif": "1",
+      "description": "coucou test redirection",
+      "communaute": "public",
+      "oids": [
+        {
+          "oid": "1.3.6.1.2.1.2.2.1.16.10"
+        },
+        {
+          "oid": "1.12.6.3.2.3.1.44"
+        },
+        {
+          "oid": "1.2.3.4.45.5"
+        }
+      ],
+      "port": "22558",
+      "uuid": "01677e13-25a6-4127-9c85-5054fc765bdd"
+    },
+    {
       "ip": "10.0.0.6",
       "actif": "1",
       "description": "coucou test redirection",
@@ -20,80 +39,23 @@
       "uuid": "01677e13-25a6-4127-9c85-5054fc765bdd"
     },
     {
-      "ip": "10.0.2.3",
+      "ip": "10.0.0.6",
       "actif": "1",
-      "description": "Test pour banane",
+      "description": "coucou test redirection",
       "communaute": "Public",
       "oids": [
         {
-          "oid": "1.233.3.2.23.3"
+          "oid": "1.4.3.2.1.2.33"
         },
         {
-          "oid": "1.3.4.4.3.2."
+          "oid": "1.12.6.3.2.3.1.44"
         },
         {
-          "oid": "1.233.4.5.4.3."
+          "oid": "1.2.3.4.45.5"
         }
       ],
       "port": "161",
-      "uuid": "115da41a-a302-40d5-995c-b9e268954ba6"
-    },
-    {
-      "ip": "10.0.0.11",
-      "actif": "1",
-      "description": "Pour ryan",
-      "communaute": "public",
-      "oids": [
-        {
-          "oid": "1.1.2.2.5.4"
-        },
-        {
-          "oid": "1.1.2.2.5.5"
-        },
-        {
-          "oid": "1.1.2.2.5.6"
-        }
-      ],
-      "port": "161",
-      "uuid": "f268d0c6-993a-42d7-8077-91e0348637a7"
-    },
-    {
-      "ip": "10.1.2.1",
-      "actif": "1",
-      "description": "Test pour OID",
-      "communaute": "Public",
-      "oids": [
-        {
-          "oid": "1.1.1.1.2"
-        },
-        {
-          "oid": "1.1.2.3.2"
-        },
-        {
-          "oid": "1.3.5.28"
-        }
-      ],
-      "port": "161",
-      "uuid": "ebf033ef-b17b-4331-8b83-2d26f1b72a5b"
-    },
-    {
-      "ip": "10.0.0.20",
-      "actif": "1",
-      "description": "Test mini presentation",
-      "communaute": "Public",
-      "oids": [
-        {
-          "oid": "11.1.1.1.2.2"
-        },
-        {
-          "oid": "1..2.25.."
-        },
-        {
-          "oid": ".1.1.5.2.2.1"
-        }
-      ],
-      "port": "161",
-      "uuid": "16ee7e8c-921b-4036-850f-a6fbc48f697f"
+      "uuid": "01677e13-25a6-4127-9c85-5054fc765bdd"
     }
   ]
 }

@@ -1,22 +1,23 @@
+import json
 from pysnmp.hlapi import *
 from json import *
+from datetime import datetime
 
 
 def snmp():
 
-    equipement = fromJsonToObject("../materiels.json")
-    snmpresult = ""
+    with open("../materiels.json") as json_data:
+        equipement = json.load(json_data)
 
-    for device in equipement:
-        for oid in equipement.oids:
+    for device in equipement['device']:
+        for oids in device['oids']:
             iterator = getCmd(SnmpEngine(),
-                            CommunityData(equipement.communaute),
-                            UdpTransportTarget((equipement.ip, equipement.port)),
+                            CommunityData(device['communaute']),
+                            UdpTransportTarget((device['ip'], device['port'])),
                             ContextData(),
-                            ObjectType(ObjectIdentity('1.3.6.1.2.1.2.2.1.16.10')))
+                            ObjectType(ObjectIdentity(oids['oid'])))
 
             errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
-
             if errorIndication:  # SNMP engine errors
                 print(errorIndication)
             else:
@@ -24,7 +25,17 @@ def snmp():
                     print('%s at %s' % (errorStatus.prettyPrint(), varBinds[int(errorIndex)-1] if errorIndex else '?'))
                 else:
                     for varBind in varBinds:  # SNMP response contents
-                        print(' = '.join([x.prettyPrint() for x in varBind]))
+                        result = (' = '.join([x.prettyPrint() for x in varBind]))
 
-            snmpresult = 
-    return snmpresult 
+            snmpresult = str(datetime.now())+';'+device['ip']+';'+device['uuid']+';'+oids['oid']+';'+result
+
+            fichier = open("../logs.txt", "a")
+            fichier.write("\n"+snmpresult)
+            fichier.close()
+
+    return 0
+
+if __name__ == "__main__":
+    snmp()
+
+    #https://matplotlib.org/ librairie affichage graph
