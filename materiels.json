@@ -56,6 +56,25 @@
       ],
       "port": "161",
       "uuid": "01677e13-25a6-4127-9c85-5054fc765bdd"
+    },
+    {
+      "ip": "glmsfr.ddns.net",
+      "actif": "1",
+      "description": "coucou test redirection",
+      "communaute": "public",
+      "oids": [
+        {
+          "oid": "1.3.6.1.2.1.2.2.1.16.10"
+        },
+        {
+          "oid": "1.12.6.3.2.3.1.44"
+        },
+        {
+          "oid": "1.2.3.4.45.5"
+        }
+      ],
+      "port": "22558",
+      "uuid": "01677e13-25a6-4127-9c85-5054fc765bdd"
     }
   ]
 }

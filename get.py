@@ -6,7 +6,7 @@ from datetime import datetime
 
 def snmp():
 
-    with open("/home/antoine/Documents/Cours/gitsnmp/DevSNMP/materiels.json") as json_data:
+    with open("./materiels.json") as json_data:
         equipement = json.load(json_data)
 
     for device in equipement['device']:
@@ -19,7 +19,7 @@ def snmp():
 
             errorIndication, errorStatus, errorIndex, varBinds = next(iterator)
             if errorIndication:  # SNMP engine errors
-                print(errorIndication)
+                result = str(errorIndication)
             else:
                 if errorStatus:  # SNMP agent errors
                     print('%s at %s' % (errorStatus.prettyPrint(), varBinds[int(errorIndex)-1] if errorIndex else '?'))
@@ -27,10 +27,10 @@ def snmp():
                     for varBind in varBinds:  # SNMP response contents
                         result = (' = '.join([x.prettyPrint() for x in varBind]))
 
-            snmpresult = str(datetime.now())+';'+device['ip']+';'+device['uuid']+';'+oids['oid']+';'+result
+            snmpresult = str(datetime.now())+';'+device['ip']+';'+device['uuid']+';'+oids['oid']+';'
 
-            fichier = open("/home/antoine/Documents/Cours/gitsnmp/DevSNMP/logs.txt", "a")
-            fichier.write("\n"+snmpresult)
+            fichier = open("./logs.txt", "a")
+            fichier.write("\n"+snmpresult+result)
             fichier.close()
 
     return 0
