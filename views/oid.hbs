@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Edit device</title>
+    <title>Monitor device</title>
     <style>
       body { margin: 0; padding-bottom: 3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
 
@@ -23,9 +23,15 @@
             <a href="/list_device"><button>Retourner à la liste des device monitoré</button></a>
         </div>
         <div class="choix_oid">
-            <p>OID 1 = {{oid1}}</p><a href="/monitor/{{uuid_pre}}/oid1"><button>visualiser les data de l'oid1</button></a>
-            <p>OID 2 = {{oid2}}</p><a href="/monitor/{{uuid_pre}}/oid2"><button>visualiser les data de l'oid2</button></a>
-            <p>OID 3 = {{oid3}}</p><a href="/monitor/{{uuid_pre}}/oid3"><button>visualiser les data de l'oid3</button></a>
+            <h3>description du device:</h3>
+            <p>{{description_pre}}</p>
+            <p></p>
+            <h3>addresse IP ou hostname du device:</h3>
+            <p>{{ip_pre}}</p>
+            <p></p>
+            <p>OID 1 = {{oid1_pre}}  <a href="/monitor/{{uuid_pre}}/oid1"><button>visualiser les data de l'oid1</button></a></p>
+            <p>OID 2 = {{oid2_pre}}  <a href="/monitor/{{uuid_pre}}/oid2"><button>visualiser les data de l'oid2</button></a></p>
+            <p>OID 3 = {{oid3_pre}}  <a href="/monitor/{{uuid_pre}}/oid3"><button>visualiser les data de l'oid3</button></a></p>
         </div>
 
     </body>

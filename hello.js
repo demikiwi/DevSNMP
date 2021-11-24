@@ -5,7 +5,8 @@ const port = 8081
 const json2html = require('node-json2html')
 var bodyParser = require('body-parser')
 const add = require('./ajout')
-const edit = require('./edit')
+const edit = require('./edit');
+const monitoring = require('./monitoring');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -26,7 +27,7 @@ const json = require('./materiels.json')
         {'<>':'span class="description"','text':'${description} '},
         {'<>':'span class="info"','text':'${port} '},
         {'<>':'a href="/edit_device/${uuid}"','text':'edit device'},
-        {'<>':'span class="separateur"','text':''},
+        {'<>':'span class="separateur"','text':' '},
         {'<>':'a href="/remove_device/${uuid}"','text':'remove device'},
         {'<>':'span class="separateur"','text':' '},
         {'<>':'a href="/monitor/${uuid}"','text':'monitor device'}
@@ -90,6 +91,46 @@ app.get('/remove_device/:uuid', (req, res) => {
 });
 
 app.get('/monitor/:uuid', (req, res) => {
+
+  prefil = edit.PrefillPourEdit(req.params.uuid)
+
+  res.render('oid', { 
+    layout: false,
+    uuid_pre: req.params.uuid,
+    description_pre : prefil.description,
+    ip_pre : prefil.ip,
+    oid1_pre : prefil.oid1,
+    oid2_pre : prefil.oid2,
+    oid3_pre : prefil.oid3
+    })
+});
+
+app.get('/monitor/:uuid/oid1', (req, res) => {
+  oid = monitoring.prefil_oid_1(req.params.uuid)
+
+  monitoring.getdata(req.params.uuid)
+
+
+  res.render('oid', { 
+    layout: false,
+    uuid_pre: req.params.uuid
+    })
+});
+
+app.get('/monitor/:uuid/oid2', (req, res) => {
+  oid = monitoring.prefil_oid_2(req.params.uuid)
+
+
+  res.render('oid', { 
+    layout: false,
+    uuid_pre: req.params.uuid
+    })
+});
+
+app.get('/monitor/:uuid/oid3', (req, res) => {
+  oid = monitoring.prefil_oid_3(req.params.uuid)
+
+
   res.render('oid', { 
     layout: false,
     uuid_pre: req.params.uuid
